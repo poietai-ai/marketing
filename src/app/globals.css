@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
+    --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-geist-mono), ui-monospace, monospace;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -16,18 +18,55 @@
 }
 
 :root {
-    --background: oklch(0.145 0 0);
+    /* Violet-tinted dark backgrounds */
+    --background: oklch(0.13 0.015 285);
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
+    --card: oklch(0.18 0.02 285);
     --card-foreground: oklch(0.985 0 0);
+    --surface: oklch(0.155 0.018 285);
+
+    /* Brand purple */
     --primary: oklch(0.558 0.218 293);
     --primary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
+
+    /* Muted tones */
+    --muted: oklch(0.24 0.015 285);
+    --muted-foreground: oklch(0.708 0.01 285);
+
+    /* Borders & inputs */
+    --border: oklch(1 0 0 / 8%);
+    --input: oklch(1 0 0 / 12%);
     --ring: oklch(0.606 0.25 292);
-    --surface: oklch(0.18 0 0);
+
+    /* Brand gradient endpoints */
+    --gradient-from: oklch(0.55 0.28 293);
+    --gradient-to: oklch(0.58 0.25 265);
+}
+
+@keyframes char-roll {
+    0% { transform: rotateX(0deg) scale(1); }
+    25% { transform: rotateX(90deg) scale(0.8); }
+    50% { transform: rotateX(180deg) scale(1); }
+    75% { transform: rotateX(270deg) scale(0.8); }
+    100% { transform: rotateX(360deg) scale(1); }
+}
+
+@layer utilities {
+    .animate-char-roll {
+        animation: char-roll 0.3s ease-in-out;
+    }
+    .bg-dot-grid {
+        background-image: radial-gradient(circle, oklch(1 0 0 / 7%) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+    .bg-hero-glow {
+        background: radial-gradient(
+            ellipse 900px 600px at 50% 50%,
+            oklch(0.55 0.28 293 / 20%) 0%,
+            oklch(0.58 0.25 265 / 8%) 40%,
+            transparent 70%
+        );
+    }
 }
 
 @layer base {

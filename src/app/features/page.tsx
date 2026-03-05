@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { WaitlistForm } from "@/components/ui/WaitlistForm";
 
 export const metadata: Metadata = {
@@ -117,11 +118,16 @@ export default function FeaturesPage() {
         </section>
       ))}
 
-      <section className="border-t border-border bg-surface px-6 py-24">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Get Early Access</h2>
+      <section className="relative overflow-hidden border-t border-border px-6 py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-from)]/10 to-[var(--gradient-to)]/10" />
+        <div className="relative mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground">Get Early Access</h2>
           <p className="mt-4 text-muted-foreground">
             Join the waitlist and be first to meet your team.
+            {" "}
+            <Link href="/pricing" className="text-primary underline hover:text-primary/80">
+              See pricing
+            </Link>.
           </p>
           <div className="relative mt-8 flex justify-center">
             <WaitlistForm />

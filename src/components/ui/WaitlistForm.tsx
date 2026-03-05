@@ -25,7 +25,7 @@ export function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} id="waitlist" className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+    <form onSubmit={handleSubmit} id="waitlist" className="scroll-mt-20 flex w-full max-w-md flex-col gap-3 sm:flex-row">
       <input
         type="email"
         required
@@ -38,12 +38,12 @@ export function WaitlistForm() {
       <button
         type="submit"
         disabled={status === "loading" || status === "success"}
-        className="rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50"
+        className="rounded-lg bg-gradient-to-r from-[var(--gradient-from)] to-[var(--gradient-to)] px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
       >
-        {status === "loading" ? "Joining..." : status === "success" ? "Joined!" : "Join Waitlist"}
+        {status === "loading" ? "Joining..." : status === "success" ? "You're In!" : "Get Early Access"}
       </button>
       {message && (
-        <p className={`text-sm sm:absolute sm:mt-14 ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+        <p className={`text-sm sm:absolute sm:mt-14 ${status === "success" ? "text-primary" : "text-red-400"}`}>
           {message}
         </p>
       )}

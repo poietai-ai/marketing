@@ -27,7 +27,7 @@ export function Footer() {
               poietai<span className="text-primary">.ai</span>
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              A SaaS company at your fingertips.
+              Makers direct. Doers ship.
             </p>
           </div>
           {Object.entries(footerLinks).map(([category, links]) => (

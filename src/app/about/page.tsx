@@ -62,9 +62,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface px-6 py-24">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Join the Journey</h2>
+      <section className="relative overflow-hidden border-t border-border px-6 py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-from)]/10 to-[var(--gradient-to)]/10" />
+        <div className="relative mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground">Join the Journey</h2>
           <p className="mt-4 text-muted-foreground">
             We&apos;re building this in the open. Get on the waitlist for updates and
             early access.
