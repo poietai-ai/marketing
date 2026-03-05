@@ -11,9 +11,9 @@ export default function AboutPage() {
   return (
     <div>
       <section className="mx-auto max-w-3xl px-6 pb-16 pt-20">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">About</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">About</h1>
 
-        <div className="mt-12 space-y-8 text-lg leading-relaxed text-gray-600">
+        <div className="mt-12 space-y-8 text-lg leading-relaxed text-muted-foreground">
           <p>
             poietai.ai was born from a real workflow — not a pitch deck.
           </p>
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            The name comes from the Greek word <em>poiesis</em> — the act of bringing
+            The name comes from the Greek word <em className="text-foreground">poiesis</em> — the act of bringing
             something into being that did not exist before. That&apos;s what this tool
             enables: creation at a scale and pace that wasn&apos;t possible for a solo
             founder or a small team.
@@ -62,10 +62,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-gray-100 bg-gray-50 px-6 py-24">
+      <section className="border-t border-border bg-surface px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Join the Journey</h2>
-          <p className="mt-4 text-gray-600">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">Join the Journey</h2>
+          <p className="mt-4 text-muted-foreground">
             We&apos;re building this in the open. Get on the waitlist for updates and
             early access.
           </p>

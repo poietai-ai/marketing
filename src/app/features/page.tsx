@@ -88,8 +88,8 @@ export default function FeaturesPage() {
   return (
     <div>
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-20 text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Features</h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Features</h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           Everything you need to run a virtual engineering organization.
         </p>
       </section>
@@ -97,18 +97,18 @@ export default function FeaturesPage() {
       {sections.map((section, i) => (
         <section
           key={section.title}
-          className={`px-6 py-20 ${i % 2 === 0 ? "bg-gray-50" : ""}`}
+          className={`px-6 py-20 ${i % 2 === 0 ? "bg-surface" : ""}`}
         >
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold tracking-tight">{section.title}</h2>
-            <p className="mt-2 text-lg font-medium text-blue-600">{section.subtitle}</p>
-            <p className="mt-6 text-lg leading-relaxed text-gray-600">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">{section.title}</h2>
+            <p className="mt-2 text-lg font-medium text-primary">{section.subtitle}</p>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               {section.description}
             </p>
             <ul className="mt-8 space-y-3">
               {section.details.map((detail) => (
-                <li key={detail} className="flex items-start gap-3 text-gray-600">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
+                <li key={detail} className="flex items-start gap-3 text-muted-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   {detail}
                 </li>
               ))}
@@ -117,10 +117,10 @@ export default function FeaturesPage() {
         </section>
       ))}
 
-      <section className="border-t border-gray-100 bg-gray-50 px-6 py-24">
+      <section className="border-t border-border bg-surface px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Get Early Access</h2>
-          <p className="mt-4 text-gray-600">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">Get Early Access</h2>
+          <p className="mt-4 text-muted-foreground">
             Join the waitlist and be first to meet your team.
           </p>
           <div className="relative mt-8 flex justify-center">
