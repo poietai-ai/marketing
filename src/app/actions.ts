@@ -2,23 +2,24 @@
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID || "";
-
 export async function joinWaitlist(email: string): Promise<{ success: boolean; error?: string }> {
   if (!email || !email.includes("@")) {
     return { success: false, error: "Please enter a valid email address." };
   }
 
-  if (!AUDIENCE_ID) {
-    console.error("RESEND_AUDIENCE_ID is not configured");
+  const apiKey = process.env.RESEND_API_KEY;
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
+
+  if (!apiKey || !audienceId) {
+    console.error("Resend is not configured (missing RESEND_API_KEY or RESEND_AUDIENCE_ID)");
     return { success: false, error: "Waitlist is not configured yet. Please try again later." };
   }
 
   try {
+    const resend = new Resend(apiKey);
     await resend.contacts.create({
       email,
-      audienceId: AUDIENCE_ID,
+      audienceId,
     });
     return { success: true };
   } catch (error) {
